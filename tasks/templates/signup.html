@@ -1,0 +1,10 @@
+<h1>Signup</h1>
+
+{{error}}
+
+<!-- Se puede omitir action="signup/ en este caso porque por defecto el post se hace en la misma ruta" -->
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Sign up</button>
+</form>
