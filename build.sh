@@ -4,6 +4,7 @@ set -o errexit
 
 # poetry install
 
+pip install pipenv
 pipenv shell
 pipenv install
 
