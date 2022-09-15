@@ -1,14 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Signup</h1>
 
-{{error}}
-
-<!-- Se puede omitir action="signup/ en este caso porque por defecto el post se hace en la misma ruta" -->
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button>Sign up</button>
-</form>
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <!-- Se puede omitir action="signup/ en este caso porque por defecto el post se hace en la misma ruta" -->
+            <form method="POST" class="card card-body">
+                <h1 class="text-center">Signup</h1>
+                {{error}}
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username">Username: </label>
+                    <input type="text" name="username" class="form-control" placeholder="Write your username" id="username">
+                </div>
+                <div class="mb-3">
+                    <label for="password1">Password: </label>
+                    <input type="password" name="password1" class="form-control" placeholder="Write your password" id="password1">
+                </div>
+                <div class="mb-3">
+                    <label for="password2">Confirm Password: </label>
+                    <input type="password" name="password2" class="form-control" placeholder="Confirm your password" id="password2">
+                </div>
+                <button class="btn btn-primary">Sign up</button>
+            </form>
+        </div>
+    </div>
+</main>
 {% endblock %}
